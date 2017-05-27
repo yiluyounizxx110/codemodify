@@ -1,0 +1,49 @@
+﻿
+html { background-color: white; }
+ul,ol {list-style:none;}
+a {text-decoration:none; color:#333}
+a:hover {text-decoration:none;color:#333}
+a,button{cursor:pointer;#333333}
+a,input,button,select,textarea{outline:none;}
+body {
+	margin: 0;
+	padding: 0;
+	color: #333;
+	font: 14px/1.8 Tahoma, Geneva, '\5B8B\4F53';
+}
+.content{overflow:hidden; }
+.content .img{
+	float:left
+}
+.content .login{
+	float:left;margin-left:56px;
+}
+.content .login .tit{
+	margin-top:56px;font-size:50px;overflow:hidden;
+}
+.content .login .frm{
+	margin-top:58px;overflow:hidden;
+}
+.content .login .frm .ipt{
+	display:block;position:relative;
+}
+.content .login .frm  .ipt .user{
+	position:absolute;left:25px;top:13px;;height:27px;width:40px;overlow:hidden;
+}
+.content .login .frm  .ipt  input {
+	height:48px;width:358px;border-radius:36px;padding-left:65px;background-color:#f9f9f9;
+}
+.content .login .frm .pwd{
+	margin-top:48px;
+}
+.content .login .frm .warn{
+	margin-top:48px;display:block;font-size:20px;color:red;
+}
+
+.content .login .frm .btn{
+	margin-top:102px;
+}
+.content .login .frm .btn input{
+	border-radius:36px;background-color:#3194d0;width:386px;height:58px;color:#fff;font-size:22px;
+}
+
