@@ -458,8 +458,35 @@ a{color: #5EB95E;text-decoration:none;cursor: pointer;}
 .user_amount .left_img{
 	background-color: #F39D12;
 }
+.imgs_tnums .left_img{
+	background-color: #2EA2DB;
+}
 .wetchatnum .left_img{
 	background-color: #308302;
+}
+.ads_nums .left_img{
+	background-color: #20ad77;
+}
+.catenums .left_img{
+	background-color:rgb(255, 87, 34);
+}
+.visitornums .left_img{
+	background-color:#7D9EC0;
+}
+.goodsnums .left_img{
+	background-color: #EC7002;
+}
+.shopnums .left_img{
+	background-color: #d64432;
+}
+.sumofmoney .left_img{
+	background-color: #B03060;
+}
+.evaluatenums .left_img{
+	background-color: #DF3033;
+}
+.returngoods .left_img{
+	background-color: #20ad77;
 }
 .left_img div{
 	width:56px;
@@ -482,11 +509,56 @@ a{color: #5EB95E;text-decoration:none;cursor: pointer;}
 .user_amount .left_img div{
 	background-position: -97px -43px;
 }
-.wetchatnum .left_img div{
-	background-image: url(../images/wechat.png);
-	background-position: 0px 0px;
+.imgs_tnums .left_img div{
+	background-image: url(../images/imgs_icon.png);
+	background-position: 4px 3px;
 	background-repeat: no-repeat;
 }
+.wetchatnum .left_img div{
+	background-image: url(../images/wechat.png);
+	background-position: 3px 9px;
+	background-repeat: no-repeat;
+}
+.ads_nums .left_img div{
+	background-image: url(../images/ad_icon.png);
+	background-position: 9px 10px;
+	background-repeat: no-repeat;
+}
+.catenums .left_img div{
+	background-image: url(../images/catenums.png);
+	background-position: 9px 10px;
+	background-repeat: no-repeat;
+}
+.visitornums .left_img div{
+	background-image: url(../images/visitornums.png);
+	background-position: 9px 10px;
+	background-repeat: no-repeat;
+}
+.goodsnums .left_img div{
+	background-image: url(../images/goodsnums.png);
+	background-position: 9px 10px;
+	background-repeat: no-repeat;
+}
+.shopnums .left_img div{
+	background-image: url(../images/shopnums.png);
+	background-position: 9px 10px;
+	background-repeat: no-repeat;
+}
+.sumofmoney .left_img div{
+	background-image: url(../images/sumofmoney.png);
+	background-position: 9px 10px;
+	background-repeat: no-repeat;
+}
+.evaluatenums .left_img div{
+	background-image: url(../images/evaluatenums.png);
+	background-position: 9px 10px;
+	background-repeat: no-repeat;
+} 
+.returngoods .left_img div{
+	background-image: url(../images/returngoods.png);
+	background-position: 9px 10px;
+	background-repeat: no-repeat;
+} 
 .right_text span{
 	display: block;
 	text-align: center;
