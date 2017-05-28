@@ -1,0 +1,3387 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>商品详情页</title>
+	<link href="css/base.css" rel="stylesheet" type="text/css"/>
+	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/jquery.jqzoom.js"></script>
+	<script type="text/javascript" src="js/lvjing.js"></script>
+</head>
+
+<body>
+	<!--header start-->
+	<div class="header w100">
+		<div class="header_in in_width f12">
+			<div class="header_lef fl">
+				<p>
+					您好 u2452
+					<span class="span_01">V0普通会员</span>
+					，欢迎来到
+					<a href="javascript:;" class="sc_a">yershop商城</a>
+					<a href="javascript:;" class="tc_a">［退出］</a>
+				</p>
+			</div>
+			<div class="header_rgt fr">
+				<dl class="down_app">
+					<dt><em class="ico_tel"></em><a href="/wap">移动端</a><i></i></dt>
+					<dd>
+						<div class="qrcode"><img src="images/code_pic.gif"></div>
+						<div class="hint">
+							<h4>手机APP开发中</h4>
+							敬请期待
+							<div class="addurl">
+								<a href="javascript:;" ><i class="icon-android fl"><img src="images/android_icon.gif"></i><span class="fl"></span>Android</a>
+								<a href="javascript:;"><i class="icon-apple fl"><img src="images/phone_icon.gif"></i><span class="fl">iPhone</span></a>
+							</div>
+						</div>
+						
+					</dd>      
+				</dl>
+				<dl class="">
+					<dt><em class="ico_shop"></em><a href="javascript:;">商家管理</a><i></i></dt>
+					<dd>
+						<ul>
+							<li><a href="javascript:;">招商入驻</a></li>
+							<li><a href="javascript:;">商家登录</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="">
+					<dt><em class="ico_order"></em><a href="javascript:;">我的订单</a><i></i></dt>
+					<dd>
+						<ul>
+							<li><a href="javascript:;">待付款订单</a></li>
+							<li><a href="javascript:;">待确认收货</a></li>
+							<li><a href="javascript:;">待评价交易</a></li>
+						</ul>
+				    </dd>
+				</dl>
+				<dl class="">
+					<dt><em class="ico_store"></em><a href="javascript:;">我的收藏</a><i></i></dt>
+					<dd>
+					    <ul>
+							<li><a href="javascript:;">商品收藏</a></li>
+							<li><a href="javascript:;">店铺收藏</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="">
+					<dt><em class="ico_service"></em>客户服务<i></i></dt>
+					<dd>
+					    <ul>
+							<li><a href="javascript:;">新手指南</a></li>
+							<li><a href="javascript:;">购物指南</a></li>
+							<li><a href="javascript:;">常见问题</a></li>
+					    </ul>
+					</dd>
+				</dl>
+			    <dl class="weixin">
+					<dt><em class="weixin"></em>关注我们<i></i></dt>
+					<dd>
+					    <h4>扫描二维码<br>
+						关注商城微信号</h4>
+					    <img src="images/code_pic.gif"> 
+					</dd>
+				</dl>								
+			</div>
+		</div>	
+	</div>
+	<!--/header end-->
+	<!--logo start-->
+	<div class="logo w100">
+		<div class="logo_in in_width">
+			<h1 class="logo_pic fl"><a href="javascript:;"><img title="YERSHOP" src="images/logo_pic.gif" width="201" height="59" />YERSHOP</a></h1>			
+			<div class="head-search-layout">
+				<div class="head-search-bar" id="head-search-bar">
+					<div class="hd_serach_tab" id="hdSearchTab">
+						<ul><li act="search" class="current"><span>商品</span><i class="arrow"></i></li><li act="store_list" style="display: none;"><span>店铺</span></li></ul>
+                        <i></i>
+                    </div>
+                    <form class="search-form" id="top_search_form">
+						<input name="act" id="search_act" value="search" type="hidden">
+          
+                        <input name="keyword" id="keyword" type="text" class="input-text ui-autocomplete-input" value="" maxlength="60" x-webkit-speech="" lang="zh-CN" onwebkitspeechchange="foo()" placeholder="请输入您要搜索的商品的关键字" data-value="" x-webkit-grammar="builtin:search" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+                        <input type="submit" id="button" value="搜索" class="input-submit">
+                    </form>
+                    <div class="search-tip" id="search-tip" style="display: none;">
+                        <div class="search-history">
+							<div class="title">历史纪录<a href="javascript:;" id="search-his-del">清除</a></div>
+							<ul id="search-his-list"></ul>
+						</div>
+						<div class="search-hot">
+							<div class="title">热门搜索...</div>
+							<ul></ul>
+						</div>
+					</div>
+				</div>
+				<div class="keyword">
+					<ul><li><a href="javascript:;"></a></li></ul>
+				</div>
+			</div>			
+			<div class="mod_minicart" style="">
+				<a id="nofollow" target="_self" href="javascript:;" class="mini_cart_btn">
+					<i class="cart_icon"></i> 
+					<em class="cart_num">0</em>
+					<span>购物车</span>
+				</a>
+				<div id="minicart_list" class="minicart_list">
+					<div class="spacer"></div>
+					<!-- 购物车没有商品 -->
+					<div class="list_detail">
+						<div style="" class="none_tips">
+							<i> </i>
+							<p>购物车中没有商品，赶紧去选购！</p>
+						</div>
+					</div>
+					<!-- 购物车有商品 -->
+					<!-- <div class="list_detail">
+						<ul class="has_sp">
+							<li>
+								<a href="javascript:;" class="pic fl"><img src="images/tx_pic_02.jpg"/></a>
+								<a href="javascript:;" class="name fl">【梨享新中式】一品梅803妆台妆椅 梳妆台椅（梳妆台1+梳妆椅1） 刺猬紫檀</a>
+								<div class="mcartRight">
+									<span class="pro_price"><em>¥9800.00×4</em></span>
+									<em><a href="javascript:;">删除</a></em>
+								</div>
+							</li>
+							<li>
+								<a href="javascript:;" class="pic fl"><img src="images/tx_pic_02.jpg"/></a>
+								<a href="javascript:;" class="name fl">【梨享新中式】一品梅803妆台妆椅 梳妆台椅（梳妆台1+梳妆椅1） 刺猬紫檀</a>
+								<div class="mcartRight">
+									<span class="pro_price"><em>¥9800.00×4</em></span>
+									<em><a href="javascript:;">删除</a></em>
+								</div>
+							</li>
+						</ul>
+						<div class="checkout_box">
+							<p class="fl">共<em class="tNum">2</em>种商品,总计金额：<em class="tSum">¥77000.00</em></p>
+							<a class="checkout_btn" href="javascript:;"> 去结算 </a>
+
+						</div>
+					</div> -->
+				</div>				
+			</div>			
+			
+		</div>
+	</div>
+	<!--/logo end--> 
+	<!--nav start-->
+	<div class="nav w100">
+		<div class="nav_in in_width">
+			<div class="sidebar_div fl">
+				<div class="title">
+					<i></i>
+					<h2 class="f14" id="all-class">全部商品分类</h2>
+				</div>
+				
+				<ul class="left_sidebar" id="all-goods">														
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+					<li class="left_sidebar_li">
+						<div class="product">
+							<div class="border">								
+								<div class="fl_div fl">
+									<h3><a href="javascript:;">男装、女装、童装、内衣</a></h3>
+								</div>
+								<span class="fr pic"><img src="images/left_sidebar_li.gif"/></span>
+							</div>							
+						</div>
+						<div class="product-wrap f14">
+							<div class="menu_div">								
+								<div class="sub-class" >
+									<div class="sub-class-content">
+										<div class="recommend-class">
+											<span><a href="javascript:;" title="连衣裙">连衣裙</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="半身裙">半身裙</a></span>
+											<span><a href="javascript:;" title="吊带/背心">吊带/背心</a></span>
+											<span><a href="javascript:;" title="衬衫">衬衫</a></span>
+											<span><a href="javascript:;" title="T恤">T恤</a></span>
+											<span><a href="javascript:;" title="POLO衫">POLO衫</a></span>
+											<span><a href="javascript:;" title="羊绒衫">羊绒衫</a></span>
+											<span><a href="javascript:;" title="亲子装">亲子装</a></span>
+										</div>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+										<dl>
+											<dt><h3><a href="javascript:;">女装</a></h3></dt>
+											<dd class="goods-class">
+												<a href="javascript:;">连衣裙</a>
+												<a href="javascript:;">T恤</a>
+												<a href="javascript:;">雪纺衫</a>
+												<a href="javascript:;">衬衫</a>
+												<a href="javascript:;">休闲裤</a>
+												<a href="javascript:;">牛仔裤</a>
+												<a href="javascript:;">针织衫</a>
+											</dd>
+										</dl>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>			
+			<ul class="nav_list fl">
+				<li class=" current fl"><a href="javascript:;">首页</a></li>
+				<li class="fl"><a href="javascript:;">会员中心</a></li>
+				<li class="fl"><a href="javascript:;">会员计划</a></li>
+				<li class="fl"><a href="javascript:;">联盟商家</a></li>
+				<li class="fl"><a href="javascript:;">商家热线：800-818-123</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--/nav end-->
+	<!--crumb start-->
+	<div class="crumb w100 crumb_01">
+		<div class="crumb_in in_width crumb_in_01">
+			<p><span class="icon"></span><a href="javascript:;" class="index_a">首页</a>><a href="javascript:;" class="cru_01">家居、家具、家装、厨具</a>><a href="javascript:;" class="cru_01">卧室家具</a>><a href="javascript:;" class="cru_01">床</a>><span>【梨享新中式】一品梅803卧室系列 大床组合（大床1+床头柜2） 刺猬紫檀</span></p>
+		</div>
+	</div>
+	<!--/crumb end-->	
+	<!--main start-->
+	<div class="main w100 spxq_main">
+		<div class="main_in in_width spxq_main_in">
+			<div class="top_div">
+				<div class="lft_pic fl">					
+					<div id="preview" class="spec-preview"> 
+						<span class="jqzoom">
+							<img jqimg="images/s1.gif" src="images/s1.gif" width="360"/>
+						</span> 
+					</div>
+					<div class="spec-scroll">
+						<a class="spec-forward disable">
+							<i class="sprite-arrow-prev"></i>
+						</a>
+						<a class="spec-backward">
+							<i class="sprite-arrow-next"></i>
+						</a>
+						<div class="items">
+							<ul>
+								<li><img alt="" bimg="images/s1.gif" src="images/s1.gif" onmousemove="preview(this);"></li>
+								<li><img alt="" bimg="images/s1.gif" src="images/cbjl_pic_02.gif" onmousemove="preview(this);"></li>
+								<li><img alt="" bimg="images/s1.gif" src="images/cbjl_pic_03.gif" onmousemove="preview(this);"></li>
+								<li><img alt="" bimg="images/s1.gif" src="images/cbjl_pic_04.gif" onmousemove="preview(this);"></li>
+								<li><img alt="" bimg="images/s1.gif" src="images/cbjl_pic_05.gif" onmousemove="preview(this);"></li>
+								<li><img alt="" bimg="images/s1.gif" src="images/cbjl_pic_06.gif" onmousemove="preview(this);"></li>
+								<li><img alt="" bimg="images/s1.gif" src="images/cbjl_pic_07.gif" onmousemove="preview(this);"></li>
+								<li><img alt="" bimg="images/s1.gif" src="images/cbjl_pic_08.gif" onmousemove="preview(this);"></li>
+								<li><img alt="" bimg="images/s1.gif" src="images/cbjl_pic_09.gif" onmousemove="preview(this);"></li>
+							</ul>
+						</div>
+					</div>
+					<div class="b_div f12">
+						<a href="javascript:;" class="share fl"><i></i>分享<span>(<em>0</em>)</span></a> 
+						<a href="javascript:;" class="sc fl"><i></i>收藏商品<span>(<em>0</em>)</span></a> 
+						<a href="javascript:;" class="compare fl"><i class="sel"></i>加入对比</a>
+						<a href="javascript:;" title="举&nbsp;报" class="inform fr">举&nbsp;报</a>
+					</div>
+				</div>
+				<div class="pro_info fl">
+					<h3 class="f16"><a href="javascript:;">【梨享新中式】一品梅803卧室系列 大床组合  (大床1+床头柜2)   刺猬紫檀</a></h3>
+					<div class="price">
+						<div class="price_div fl">
+							<p class="num_01 f12"><span class="span_l fl">市&nbsp;场&nbsp;价：</span><span class="f12 span_r fl">¥32400.00</span></p>
+							<p class="num_02 f12"><span class="span_l fl">商&nbsp;城&nbsp;价：</span><span class="span_r fl">¥32400.00</span></p>
+							<div class="num_03 f12">
+								<span class="span_l fl"> 商品评分：</span>
+								<div class="star fl icon_05"></div>
+								<a href="javascript:;" class="pl_num fl">共有165条评论</a>
+							</div>
+						</div>
+						<div class="fr code f12">
+							<div class="pic"><img src="images/spxq_pic_02.gif"/></div>
+							<p>客户端扫购有惊喜</p>
+						</div>
+					</div>
+					<div class="ps f12">
+						<label class="fl">配送至：</label>
+						<select id="" class="fl">
+							<option value="bsh">请选择地区</option>
+							<option value="bsh">请选择地区</option>
+						</select>
+						<span class="fl f14">有货</span>
+					</div>
+					<div class="guige f12">
+						<label class="fl">规格：</label>
+						<ul class="sel_ul">
+							<li class="current">
+								<span class="pic fl"><img src="images/spxq_pic_03.gif"/></span>
+								<span class="txt fl">大床组合（大床1+床头柜2）</span>
+								<span class="icon"></span>
+							</li>
+							<li>
+								<span class="pic fl"><img src="images/spxq_pic_03.gif"/></span>
+								<span class="txt fl">大床</span>
+								<span class="icon"></span>
+							</li>
+							<li>
+								<span class="pic fl"><img src="images/spxq_pic_03.gif"/></span>
+								<span class="txt fl">床头柜</span>
+								<span class="icon"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="caizhi f12">
+						<label class="fl">材质：</label>
+						<ul class="sel_ul">
+							<li class="current">
+								<span class="txt fl">刺猬紫檀</span>
+								<span class="icon"></span>
+							</li>
+						</ul>
+					</div>															
+					<div class="num_input">
+						<div class="ipt_l fl">
+							<input type="text"  class="fl f16" id="num_ipt" onkeyup="value=value.replace(/[^\d]/g,'');javascript:this.value.substring(0,1)=='0'?this.value='0':this.value=this.value" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" maxlength="2"/>
+							<div class="fl btn">
+								<div class="jia"><span></span></div>
+								<div class="jian"><span></span></div>
+							</div>
+						</div>						
+						<a href="javascript:;" class="fl jr f18"><span></span>加入购物车</a>
+						<a href="javascript:;" class="fl buy f18">立即购买</a>
+					</div>
+				</div>
+				<div class="dp_info fl">
+					<a href="javascript:;" class="dp_name f14">富泰嶐梨享山东旗舰店</a>
+					<div class="zy_div">
+						<p class="zy f12">本商城自营产品</p>
+						<div class="f12 btns">
+							<a href="javascript:;" class="jdgg fl">进店逛逛</a>
+							<a href="javascript:;" class="scdp fl">收藏店铺（<span>0</span>）</a>
+						</div>
+					</div>					
+				</div>
+			</div>
+			<div class="dprm">
+				<h4>店铺热卖</h4>
+				<ul class="rm_ul">
+					<li>
+						<a href="javascript:;" class="pic"><img src="images/spxq_pic_05.gif" /></a>
+						<a href="javascript:;" class="tit f12">【梨享新中式】一品梅803餐边柜</a>
+						<p class="price f18">¥13800.00</p>
+					</li>
+					<li>
+						<a href="javascript:;" class="pic"><img src="images/spxq_pic_05.gif" /></a>
+						<a href="javascript:;" class="tit f12">【梨享新中式】一品梅803餐边柜</a>
+						<p class="price f18">¥13800.00</p>
+					</li>
+					<li>
+						<a href="javascript:;" class="pic"><img src="images/spxq_pic_05.gif" /></a>
+						<a href="javascript:;" class="tit f12">【梨享新中式】一品梅803餐边柜</a>
+						<p class="price f18">¥13800.00</p>
+					</li>
+					<li>
+						<a href="javascript:;" class="pic"><img src="images/spxq_pic_05.gif" /></a>
+						<a href="javascript:;" class="tit f12">【梨享新中式】一品梅803餐边柜</a>
+						<p class="price f18">¥13800.00</p>
+					</li>
+					<li>
+						<a href="javascript:;" class="pic"><img src="images/spxq_pic_05.gif" /></a>
+						<a href="javascript:;" class="tit f12">【梨享新中式】一品梅803餐边柜</a>
+						<p class="price f18">¥13800.00</p>
+					</li>
+					<li>
+						<a href="javascript:;" class="pic"><img src="images/spxq_pic_05.gif" /></a>
+						<a href="javascript:;" class="tit f12">【梨享新中式】一品梅803餐边柜</a>
+						<p class="price f18">¥13800.00</p>
+					</li>
+				</ul>
+			
+			</div>	
+			<div class="details">
+				<div class="lft_pan f12 fl">					
+					<div class="spfl">
+						<h3 class="title f14">商品分类</h3>
+						<ul class="tab_ul f12">
+							<li class="current"><a href="javascript:;">按新品</a></li>
+							<li class=""><a href="javascript:;">按价格</a></li>
+							<li class=""><a href="javascript:;">按销量</a></li>
+							<li class=""><a href="javascript:;">按人气</a></li>
+						</ul>
+						<div class="tab_div f12">
+							<div class="list_div current">
+								<div class="search">
+									<input type="text" placeholder="搜索店内商品" class="ipt fl"/>
+									<input type="submit" id="button_01" value="搜索" class="input-submit fl">
+								</div>
+								<div class="list_del">
+									<ul>
+										<li>
+											<a href="javascript:;">
+												<span class="icon">-</span>
+												全部商品
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon">-</span>
+												东方玫瑰系列
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon">-</span>
+												祥云瑞启系列
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon"></span>
+												一品梅系列
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon"></span>
+												小件系列
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="list_div">
+								<div class="search">
+									<input type="text" placeholder="搜索店内商品" class="ipt fl"/>
+									<input type="submit" id="button_01" value="搜索" class="input-submit fl">
+								</div>
+								<div class="list_del">
+									<ul>
+										<li>
+											<a href="javascript:;">
+												<span class="icon">-</span>
+												全部商品
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon">-</span>
+												东方玫瑰系列
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon">-</span>
+												祥云瑞启系列
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon"></span>
+												一品梅系列
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon"></span>
+												小件系列
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="list_div">
+								<div class="search">
+									<input type="text" placeholder="搜索店内商品" class="ipt fl"/>
+									<input type="submit" id="button_01" value="搜索" class="input-submit fl">
+								</div>
+								<div class="list_del">
+									<ul>
+										<li>
+											<a href="javascript:;">
+												<span class="icon">-</span>
+												全部商品
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon">-</span>
+												东方玫瑰系列
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon">-</span>
+												祥云瑞启系列
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon"></span>
+												一品梅系列
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon"></span>
+												小件系列
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="list_div">
+								<div class="search">
+									<input type="text" placeholder="搜索店内商品" class="ipt fl"/>
+									<input type="submit" id="button_01" value="搜索" class="input-submit fl">
+								</div>
+								<div class="list_del">
+									<ul>
+										<li>
+											<a href="javascript:;">
+												<span class="icon">-</span>
+												全部商品
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon">-</span>
+												东方玫瑰系列
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon">-</span>
+												祥云瑞启系列
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon"></span>
+												一品梅系列
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;">
+												<span class="icon"></span>
+												小件系列
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="klyk">
+						<h3 class="title f14">看了又看</h3>
+						<ul class="list_ul">
+							<li>
+								<a href="javascript:;" class="pic"><img src="images/spxq_pic_06.gif" /></a>
+								<a href="javascript:;" class="tit f12">【梨享新中式】东方玫瑰802系列客厅组合柜 饰柜B</a>
+								<p class="price f18">¥10500.00</p>
+							</li>
+							<li>
+								<a href="javascript:;" class="pic"><img src="images/spxq_pic_06.gif" /></a>
+								<a href="javascript:;" class="tit f12">【梨享新中式】东方玫瑰802系列客厅组合柜 饰柜B</a>
+								<p class="price f18">¥10500.00</p>
+							</li>
+							<li>
+								<a href="javascript:;" class="pic"><img src="images/spxq_pic_06.gif" /></a>
+								<a href="javascript:;" class="tit f12">【梨享新中式】东方玫瑰802系列客厅组合柜 饰柜B</a>
+								<p class="price f18">¥10500.00</p>
+							</li>
+							<li>
+								<a href="javascript:;" class="pic"><img src="images/spxq_pic_06.gif" /></a>
+								<a href="javascript:;" class="tit f12">【梨享新中式】东方玫瑰802系列客厅组合柜 饰柜B</a>
+								<p class="price f18">¥10500.00</p>
+							</li>
+							<li>
+								<a href="javascript:;" class="pic"><img src="images/spxq_pic_06.gif" /></a>
+								<a href="javascript:;" class="tit f12">【梨享新中式】东方玫瑰802系列客厅组合柜 饰柜B</a>
+								<p class="price f18">¥10500.00</p>
+							</li>
+							<li>
+								<a href="javascript:;" class="pic"><img src="images/spxq_pic_06.gif" /></a>
+								<a href="javascript:;" class="tit f12">【梨享新中式】东方玫瑰802系列客厅组合柜 饰柜B</a>
+								<p class="price f18">¥10500.00</p>
+							</li>
+						</ul>
+					</div>
+					<div class="spph">
+						<h3 class="title f14">商品排行</h3>
+						<ul class="tab_ul f14">
+							<li class="current"><a href="javascript:;">热销TOP5</a></li>
+							<li class=""><a href="javascript:;">人气TOP5</a></li>
+						</ul>
+						<div class="tab_div f12">
+							<div class="list_div current">
+								<div class="list_del">
+									<ul>
+										<li>
+											<div class="pic fl">
+												<a href="javascript:;" class="s_pic"><img src="images/dpy_pic_03.png"/></a>
+												<div class="b_pic"><img src="images/spxq_pic_07.gif"/></div>
+											</div>
+											<div class="rt fr">
+												<a href="javascript:;" class="name f12">【梨享新中式】东方...</a>
+												<p class="price f12">¥<span class="f14">51800.00</span></p>
+												<p class="num f12">售出:<span>1</span>笔</p>
+											</div>
+										</li>
+										<li>
+											<div class="pic fl">
+												<a href="javascript:;" class="s_pic"><img src="images/dpy_pic_03.png"/></a>
+												<div class="b_pic"><img src="images/spxq_pic_07.gif"/></div>
+											</div>
+											<div class="rt fr">
+												<a href="javascript:;" class="name f12">【梨享新中式】东方...</a>
+												<p class="price f12">¥<span class="f14">51800.00</span></p>
+												<p class="num f12">售出:<span>1</span>笔</p>
+											</div>
+										</li>
+										<li>
+											<div class="pic fl">
+												<a href="javascript:;" class="s_pic"><img src="images/dpy_pic_03.png"/></a>
+												<div class="b_pic"><img src="images/spxq_pic_07.gif"/></div>
+											</div>
+											<div class="rt fr">
+												<a href="javascript:;" class="name f12">【梨享新中式】东方...</a>
+												<p class="price f12">¥<span class="f14">51800.00</span></p>
+												<p class="num f12">售出:<span>1</span>笔</p>
+											</div>
+										</li>
+										<li>
+											<div class="pic fl">
+												<a href="javascript:;" class="s_pic"><img src="images/dpy_pic_03.png"/></a>
+												<div class="b_pic"><img src="images/spxq_pic_07.gif"/></div>
+											</div>
+											<div class="rt fr">
+												<a href="javascript:;" class="name f12">【梨享新中式】东方...</a>
+												<p class="price f12">¥<span class="f14">51800.00</span></p>
+												<p class="num f12">售出:<span>1</span>笔</p>
+											</div>
+										</li>
+										<li>
+											<div class="pic fl">
+												<a href="javascript:;" class="s_pic"><img src="images/dpy_pic_03.png"/></a>
+												<div class="b_pic"><img src="images/spxq_pic_07.gif"/></div>
+											</div>
+											<div class="rt fr">
+												<a href="javascript:;" class="name f12">【梨享新中式】东方...</a>
+												<p class="price f12">¥<span class="f14">51800.00</span></p>
+												<p class="num f12">售出:<span>1</span>笔</p>
+											</div>
+										</li>
+									</ul>
+									<a href="javascript:;" class="more f12">查看本店其他商品</a>
+								</div>
+							</div>
+							<div class="list_div">
+								<div class="list_del">
+									<ul>
+										<li>
+											<div class="pic fl">
+												<a href="javascript:;" class="s_pic"><img src="images/dpy_pic_03.png"/></a>
+												<div class="b_pic"><img src="images/spxq_pic_07.gif"/></div>
+											</div>
+											<div class="rt fr">
+												<a href="javascript:;" class="name f12">【梨享新中式】东方...</a>
+												<p class="price f12">¥<span class="f14">51800.00</span></p>
+												<p class="num f12">售出:<span>1</span>笔</p>
+											</div>
+										</li>
+										<li>
+											<div class="pic fl">
+												<a href="javascript:;" class="s_pic"><img src="images/dpy_pic_03.png"/></a>
+												<div class="b_pic"><img src="images/spxq_pic_07.gif"/></div>
+											</div>
+											<div class="rt fr">
+												<a href="javascript:;" class="name f12">【梨享新中式】东方...</a>
+												<p class="price f12">¥<span class="f14">51800.00</span></p>
+												<p class="num f12">售出:<span>1</span>笔</p>
+											</div>
+										</li>
+										<li>
+											<div class="pic fl">
+												<a href="javascript:;" class="s_pic"><img src="images/dpy_pic_03.png"/></a>
+												<div class="b_pic"><img src="images/spxq_pic_07.gif"/></div>
+											</div>
+											<div class="rt fr">
+												<a href="javascript:;" class="name f12">【梨享新中式】东方...</a>
+												<p class="price f12">¥<span class="f14">51800.00</span></p>
+												<p class="num f12">售出:<span>1</span>笔</p>
+											</div>
+										</li>
+										<li>
+											<div class="pic fl">
+												<a href="javascript:;" class="s_pic"><img src="images/dpy_pic_03.png"/></a>
+												<div class="b_pic"><img src="images/spxq_pic_07.gif"/></div>
+											</div>
+											<div class="rt fr">
+												<a href="javascript:;" class="name f12">【梨享新中式】东方...</a>
+												<p class="price f12">¥<span class="f14">51800.00</span></p>
+												<p class="num f12">售出:<span>1</span>笔</p>
+											</div>
+										</li>
+										<li>
+											<div class="pic fl">
+												<a href="javascript:;" class="s_pic"><img src="images/dpy_pic_03.png"/></a>
+												<div class="b_pic"><img src="images/spxq_pic_07.gif"/></div>
+											</div>
+											<div class="rt fr">
+												<a href="javascript:;" class="name f12">【梨享新中式】东方...</a>
+												<p class="price f12">¥<span class="f14">51800.00</span></p>
+												<p class="num f12">售出:<span>1</span>笔</p>
+											</div>
+										</li>
+									</ul>
+									<a href="javascript:;" class="more f12">查看本店其他商品</a>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+				<div class="rgt_pan f14 fr">
+					<div class="tit f14">
+						<ul>
+							<li class="current"><a href="javascript:;">商品详情</a></li>
+							<li><a href="javascript:;">商品评价<span>（165）</span></a></li>
+							<li><a href="javascript:;">销售记录<span>（1236）</span></a></li>
+							<li><a href="javascript:;">购买咨询</a></li>
+						</ul>
+					</div>					
+					<div class="spxq_con rgt_pan_con" style="display:block;">
+						<br />
+						<div class="info_01 f12">
+							<ul>
+								<li>商家货号：</li>
+								<li>品牌：富泰嶐梨享</li>
+							</ul>
+						</div>
+						<div class="info_02">
+							<div class="pic_01"><img src="images/spxq_pic_08.gif" /></div>
+							<h3>大床组合</h3>
+							<p class="xl">【一品梅系列】</p>
+							<div class="del_div">
+								<ul class="ul_l fl">
+									<li>品牌名称</li>
+									<li>产品名称</li>
+									<li>产品规格</li>
+									<li>产品工艺</li>
+									<li>产品材质</li>
+								</ul>
+								<ul class="ul_r fl">
+									<li>富泰隆</li>
+									<li>FTLN-803大床 FTLO-803床头柜</li>
+									<li>3260*110*1080mm</li>
+									<li>抛光、打磨</li>
+									<li>刺猬紫檀</li>
+								</ul>
+							</div>
+						</div>												
+						<div class="info_03">
+							<div class="pic_01"><img src="images/spxq_pic_08.gif" /></div>
+							<h3>时尚 新古典</h3>
+							<p class="js">摒弃了明清古典主义繁复的造型，</p>
+							<p class="js">再现了原汁原味的现代中式新古典风格。</p>
+						</div>
+						
+						<div class="info_04">
+							<div class="pic_01"><img src="images/spxq_pic_08.gif" /></div>
+							<h3>观赏实用性</h3>
+							<p class="js">巧妙地功能性设计，与现代生活的完美结合</p>
+							<p class="js">再现了原汁原味的现代中式新古典风格。</p>
+						</div>
+						<div class="info_05">
+							<div class="pic_01"><img src="images/spxq_pic_08.gif" /></div>
+							<h3>“梅花”花型轮廓设计元素</h3>
+							<p class="js">复古梅花花型线条，气质的美；提现“大美无言，大象无形”的中国士大夫的文化追求；</p>
+						</div>
+						<div class="info_06">
+							<div class="pic_01"><img src="images/spxq_pic_08.gif" /></div>
+							<h3>牡丹花雕刻</h3>
+							<p class="js">雍容大气的牡丹花雕刻，彰显尊贵、品位；</p>
+						</div>
+						<div class="sjln">
+							<h3>设计理念</h3>
+							<div class="pic_01"><img src="images/spxq_pic_09.gif" /></div>
+							<h4>【设计理念】</h4>
+							<p class="js">在传统的复古明清风格中，加入“梅花”花型轮廓的现代设计元素和现代手法雕刻牡丹花; 设计上表现手法较为灵活, 略有西式为体的色彩;产品组合丰富，适合年龄层较为年轻而又追求时尚的消费群体；</p>
+						</div>
+						<div class="xjzs">
+							<h3>细节展示</h3>
+							<div class="pic_01"><img src="images/spxq_pic_10.gif" /></div>
+							<p class="js">刺猬紫檀木特有的自然色质与纹理,满足了主人对喧嚣后回归自然平静的渴望。</p>
+							<div class="pic_01"><img src="images/spxq_pic_11.gif" /></div>
+							<p class="js">采用现代手法雕刻牡丹，精雕细琢，细细勾勒;寓意为花开富贵,整体彰显高贵、品位,雍容大气。</p>
+							<div class="pic_01"><img src="images/spxq_pic_12.gif" /></div>
+							<p class="js">传承精良手工雕刻工艺、一点一线、直与曲、方与圆、独具匠心、别有韵味</p>
+							<div class="pic_01"><img src="images/spxq_pic_13.gif" /></div>
+							<p class="js">卯椎结构，100%的通体原木色刺猬紫檀木，木纹清晰，错落有致，使产品更具有层次感和自燃感。</p>
+							<div class="pic_01"><img src="images/spxq_pic_14.gif" /></div>
+							<p class="js">白铜配件增加了一定的装饰性与欣赏性，彰显家具品味。低调内敛的细节元素，兼顾了对经典风格的钟爱。</p>
+						</div>
+					</div>
+					<div class="sppj_con rgt_pan_con" style="display:none;">
+						<br />
+						<div class="spms">
+							<div class="div_l fl">
+								<p class="txt f12">与描述相符</p>
+								<p class="num">4.8</p>
+								<div class="star star_04"></div>
+							</div>
+							<div class="div_r fl">
+								<p class="txt fl">大<br />家<br />都<br />写<br />到</p>
+								<span class="kh fl"></span>
+								<ul class="list fl">
+									<li><a href="javascript:;">做工不错（532）</a></li>
+									<li><a href="javascript:;">材料不错（532）</a></li>
+									<li><a href="javascript:;">做工不错（532）</a></li>
+									<li><a href="javascript:;">材料不错（532）</a></li>
+									<li><a href="javascript:;">做工不错（532）</a></li>
+									<li><a href="javascript:;">材料不错（532）</a></li>
+									<li><a href="javascript:;">做工不错（532）</a></li>
+									<li><a href="javascript:;">材料不错（532）</a></li>
+								</ul>
+								<div class="sel_div cl fr"><span></span></div>
+							</div>
+						</div>
+						<div class="pj_list">
+							<div class="tit_sel f12">
+								<ul class="ul_l fl">
+									<li>
+										<input type="radio" checked="checked"/>
+										<label for="">全部</label>
+									</li>
+									<li>
+										<input type="radio" />
+										<label for="">追评（135）</label>
+									</li>
+									<li>
+										<input type="radio" />
+										<label for="">图片（135）</label>
+									</li>
+								</ul>
+								<div class="div_r fr">
+									<div class="nr fl">
+										<input type="checkbox" />
+										<label for="">有内容 </label>
+									</div>
+									<div class="xl fl">
+										<div class="show">按默认 <span></span></div>
+										<div class="xl_list">按时间</div>
+									</div>
+								</div>
+							</div>
+							<div class="list_del f12">
+								<ul class="list_ul">
+									<li class="list_li">
+										<div class="div_l fl">
+											<p class="txt_01">从下单到收货只用了四天时间，且要跨四省1537公里的路程，超快。包装严实，绝对是正规商家。做工挺不错的，刚送过来也没有气味，比实体店便宜不少。信得过商家，下次还来采购。</p>
+											<ul class="pic">
+												<li><img src="images/spxq_pic_15.gif"/></li>
+												<li><img src="images/spxq_pic_15.gif"/></li>
+												<li><img src="images/spxq_pic_15.gif"/></li>
+											</ul>
+											<p class="time">09.08</p>
+											<p class="jieshi">解释：感谢亲的好评，授人玫瑰手有余香，您的好评是对我们最大的支持与鼓励，也将是我们不断前进的动力！有您的支持和肯定，我们会更加努力做到更好，如果亲有不满意的地方请一定及时联系我们哦，不周到的地方还请亲们多多谅解哈。!期待您的再次光临！</p>
+										</div>
+										<div class="div_r fr">小***小（匿名）</div>
+									</li>
+									<li class="list_li">
+										<div class="div_l fl">
+											<p class="txt_01">从下单到收货只用了四天时间，且要跨四省1537公里的路程，超快。包装严实，绝对是正规商家。做工挺不错的，刚送过来也没有气味，比实体店便宜不少。信得过商家，下次还来采购。</p>
+											<p class="time">09.08</p>
+											<p class="jieshi">解释：感谢亲的好评，授人玫瑰手有余香，您的好评是对我们最大的支持与鼓励，也将是我们不断前进的动力！有您的支持和肯定，我们会更加努力做到更好，如果亲有不满意的地方请一定及时联系我们哦，不周到的地方还请亲们多多谅解哈。!期待您的再次光临！</p>
+										</div>
+										<div class="div_r fr">小***小（匿名）</div>
+									</li>
+									<li class="list_li">
+										<div class="div_l fl">
+											<p class="txt_01">从下单到收货只用了四天时间，且要跨四省1537公里的路程，超快。包装严实，绝对是正规商家。做工挺不错的，刚送过来也没有气味，比实体店便宜不少。信得过商家，下次还来采购。</p>
+											<p class="time">09.08</p>
+										</div>
+										<div class="div_r fr">小***小（匿名）</div>
+									</li>
+									<li class="list_li">
+										<div class="div_l fl">
+											<p class="txt_01">从下单到收货只用了四天时间，且要跨四省1537公里的路程，超快。包装严实，绝对是正规商家。做工挺不错的，刚送过来也没有气味，比实体店便宜不少。信得过商家，下次还来采购。</p>
+											<ul class="pic">
+												<li><img src="images/spxq_pic_15.gif"/></li>
+												<li><img src="images/spxq_pic_15.gif"/></li>
+												<li><img src="images/spxq_pic_15.gif"/></li>
+											</ul>
+											<p class="time">09.08</p>
+											<p class="jieshi">解释：感谢亲的好评，授人玫瑰手有余香，您的好评是对我们最大的支持与鼓励，也将是我们不断前进的动力！有您的支持和肯定，我们会更加努力做到更好，如果亲有不满意的地方请一定及时联系我们哦，不周到的地方还请亲们多多谅解哈。!期待您的再次光临！</p>
+										</div>
+										<div class="div_r fr">小***小（匿名）</div>
+									</li>
+									<li class="list_li">
+										<div class="div_l fl">
+											<p class="txt_01">从下单到收货只用了四天时间，且要跨四省1537公里的路程，超快。包装严实，绝对是正规商家。做工挺不错的，刚送过来也没有气味，比实体店便宜不少。信得过商家，下次还来采购。</p>
+											<p class="time">09.08</p>
+											<p class="jieshi">解释：感谢亲的好评，授人玫瑰手有余香，您的好评是对我们最大的支持与鼓励，也将是我们不断前进的动力！有您的支持和肯定，我们会更加努力做到更好，如果亲有不满意的地方请一定及时联系我们哦，不周到的地方还请亲们多多谅解哈。!期待您的再次光临！</p>
+										</div>
+										<div class="div_r fr">小***小（匿名）</div>
+									</li>
+									<li class="list_li">
+										<div class="div_l fl">
+											<p class="txt_01">从下单到收货只用了四天时间，且要跨四省1537公里的路程，超快。包装严实，绝对是正规商家。做工挺不错的，刚送过来也没有气味，比实体店便宜不少。信得过商家，下次还来采购。</p>
+											<p class="time">09.08</p>
+										</div>
+										<div class="div_r fr">小***小（匿名）</div>
+									</li>
+									<li class="list_li">
+										<div class="div_l fl">
+											<p class="txt_01">从下单到收货只用了四天时间，且要跨四省1537公里的路程，超快。包装严实，绝对是正规商家。做工挺不错的，刚送过来也没有气味，比实体店便宜不少。信得过商家，下次还来采购。</p>
+											<ul class="pic">
+												<li><img src="images/spxq_pic_15.gif"/></li>
+												<li><img src="images/spxq_pic_15.gif"/></li>
+												<li><img src="images/spxq_pic_15.gif"/></li>
+											</ul>
+											<p class="time">09.08</p>
+											<p class="jieshi">解释：感谢亲的好评，授人玫瑰手有余香，您的好评是对我们最大的支持与鼓励，也将是我们不断前进的动力！有您的支持和肯定，我们会更加努力做到更好，如果亲有不满意的地方请一定及时联系我们哦，不周到的地方还请亲们多多谅解哈。!期待您的再次光临！</p>
+										</div>
+										<div class="div_r fr">小***小（匿名）</div>
+									</li>
+									<li class="list_li">
+										<div class="div_l fl">
+											<p class="txt_01">从下单到收货只用了四天时间，且要跨四省1537公里的路程，超快。包装严实，绝对是正规商家。做工挺不错的，刚送过来也没有气味，比实体店便宜不少。信得过商家，下次还来采购。</p>
+											<p class="time">09.08</p>
+											<p class="jieshi">解释：感谢亲的好评，授人玫瑰手有余香，您的好评是对我们最大的支持与鼓励，也将是我们不断前进的动力！有您的支持和肯定，我们会更加努力做到更好，如果亲有不满意的地方请一定及时联系我们哦，不周到的地方还请亲们多多谅解哈。!期待您的再次光临！</p>
+										</div>
+										<div class="div_r fr">小***小（匿名）</div>
+									</li>
+									<li class="list_li">
+										<div class="div_l fl">
+											<p class="txt_01">从下单到收货只用了四天时间，且要跨四省1537公里的路程，超快。包装严实，绝对是正规商家。做工挺不错的，刚送过来也没有气味，比实体店便宜不少。信得过商家，下次还来采购。</p>
+											<p class="time">09.08</p>
+										</div>
+										<div class="div_r fr">小***小（匿名）</div>
+									</li>
+									<li class="list_li">
+										<div class="div_l fl">
+											<p class="txt_01">从下单到收货只用了四天时间，且要跨四省1537公里的路程，超快。包装严实，绝对是正规商家。做工挺不错的，刚送过来也没有气味，比实体店便宜不少。信得过商家，下次还来采购。</p>
+											<ul class="pic">
+												<li><img src="images/spxq_pic_15.gif"/></li>
+												<li><img src="images/spxq_pic_15.gif"/></li>
+												<li><img src="images/spxq_pic_15.gif"/></li>
+											</ul>
+											<p class="time">09.08</p>
+											<p class="jieshi">解释：感谢亲的好评，授人玫瑰手有余香，您的好评是对我们最大的支持与鼓励，也将是我们不断前进的动力！有您的支持和肯定，我们会更加努力做到更好，如果亲有不满意的地方请一定及时联系我们哦，不周到的地方还请亲们多多谅解哈。!期待您的再次光临！</p>
+										</div>
+										<div class="div_r fr">小***小（匿名）</div>
+									</li>
+									<li class="list_li">
+										<div class="div_l fl">
+											<p class="txt_01">从下单到收货只用了四天时间，且要跨四省1537公里的路程，超快。包装严实，绝对是正规商家。做工挺不错的，刚送过来也没有气味，比实体店便宜不少。信得过商家，下次还来采购。</p>
+											<p class="time">09.08</p>
+											<p class="jieshi">解释：感谢亲的好评，授人玫瑰手有余香，您的好评是对我们最大的支持与鼓励，也将是我们不断前进的动力！有您的支持和肯定，我们会更加努力做到更好，如果亲有不满意的地方请一定及时联系我们哦，不周到的地方还请亲们多多谅解哈。!期待您的再次光临！</p>
+										</div>
+										<div class="div_r fr">小***小（匿名）</div>
+									</li>
+									<li class="list_li">
+										<div class="div_l fl">
+											<p class="txt_01">从下单到收货只用了四天时间，且要跨四省1537公里的路程，超快。包装严实，绝对是正规商家。做工挺不错的，刚送过来也没有气味，比实体店便宜不少。信得过商家，下次还来采购。</p>
+											<p class="time">09.08</p>
+										</div>
+										<div class="div_r fr">小***小（匿名）</div>
+									</li>
+								</ul>
+								<div class="page_div">
+									<div class="con">
+										<ul class="page_ul">
+											<li class="up"><a href="javascript:;"><<上一页</a></li>
+											<li class="li_01 current"><a href="javascript:;">1</a></li>
+											<li class="li_01"><a href="javascript:;">2</a></li>
+											<li class="li_01"><a href="javascript:;">3</a></li>
+											<li class="li_02"><a href="javascript:;">...</a></li>
+											<li class="down"><a href="javascript:;">下一页>></a></li>
+										</ul>
+									</div>
+									
+								</div>	
+							</div>
+						</div>
+						
+					</div>
+					<div class="xsjl_con rgt_pan_con" style="display:none;">
+						<br />
+						<div class="f12 scj">
+							<p class="prcie fl">商&nbsp;&nbsp;城&nbsp;&nbsp;价<span>32400.00</span>元</p>
+							<span class="tip fl">购买的价格不同可能是由于店铺往期促销活动引起的，详情可以咨询卖家</span>
+						</div>
+						<div class="zx_list f12">
+							<div class="title_list">
+								<span class="span_01 fl">买家</span>
+								<span class="span_02 fl">购买价</span>
+								<span class="span_03 fl">优惠活动</span>
+								<span class="span_04 fl">购买数量</span>
+								<span class="span_05 fl">购买时间</span>
+							</div>
+							<div class="xx_list">
+								<div class="list_div">
+									<span class="span_01 fl">phc001001001</span>
+									<span class="span_02 fl">¥300.00</span>
+									<span class="span_03 fl">原价</span>
+									<span class="span_04 fl">1</span>
+									<span class="span_05 fl"> 2016-09-13  20:55:31</span>
+								</div>
+								<div class="list_div">
+									<span class="span_01 fl">phc001001001</span>
+									<span class="span_02 fl">¥300.00</span>
+									<span class="span_03 fl">原价</span>
+									<span class="span_04 fl">1</span>
+									<span class="span_05 fl"> 2016-09-13  20:55:31</span>
+								</div>
+								<div class="list_div">
+									<span class="span_01 fl">phc001001001</span>
+									<span class="span_02 fl">¥300.00</span>
+									<span class="span_03 fl">原价</span>
+									<span class="span_04 fl">1</span>
+									<span class="span_05 fl"> 2016-09-13  20:55:31</span>
+								</div>
+								<div class="list_div">
+									<span class="span_01 fl">phc001001001</span>
+									<span class="span_02 fl">¥300.00</span>
+									<span class="span_03 fl">原价</span>
+									<span class="span_04 fl">1</span>
+									<span class="span_05 fl"> 2016-09-13  20:55:31</span>
+								</div>
+								<div class="list_div">
+									<span class="span_01 fl">phc001001001</span>
+									<span class="span_02 fl">¥300.00</span>
+									<span class="span_03 fl">原价</span>
+									<span class="span_04 fl">1</span>
+									<span class="span_05 fl"> 2016-09-13  20:55:31</span>
+								</div>
+								<div class="list_div">
+									<span class="span_01 fl">phc001001001</span>
+									<span class="span_02 fl">¥300.00</span>
+									<span class="span_03 fl">原价</span>
+									<span class="span_04 fl">1</span>
+									<span class="span_05 fl"> 2016-09-13  20:55:31</span>
+								</div>
+								<div class="list_div">
+									<span class="span_01 fl">phc001001001</span>
+									<span class="span_02 fl">¥300.00</span>
+									<span class="span_03 fl">原价</span>
+									<span class="span_04 fl">1</span>
+									<span class="span_05 fl"> 2016-09-13  20:55:31</span>
+								</div>
+								<div class="list_div">
+									<span class="span_01 fl">phc001001001</span>
+									<span class="span_02 fl">¥300.00</span>
+									<span class="span_03 fl">原价</span>
+									<span class="span_04 fl">1</span>
+									<span class="span_05 fl"> 2016-09-13  20:55:31</span>
+								</div>
+								<div class="list_div">
+									<span class="span_01 fl">phc001001001</span>
+									<span class="span_02 fl">¥300.00</span>
+									<span class="span_03 fl">原价</span>
+									<span class="span_04 fl">1</span>
+									<span class="span_05 fl"> 2016-09-13  20:55:31</span>
+								</div>
+								<div class="list_div">
+									<span class="span_01 fl">phc001001001</span>
+									<span class="span_02 fl">¥300.00</span>
+									<span class="span_03 fl">原价</span>
+									<span class="span_04 fl">1</span>
+									<span class="span_05 fl"> 2016-09-13  20:55:31</span>
+								</div>
+								<div class="page_div_03 f12">
+									<ul>
+										<li class="index"><a href="javascript:;">首页</a></li>
+										<li class="prev"><a href="javascript:;">上一页</a></li>
+										<li class="current"><a href="javascript:;">1</a></li>
+										<li><a href="javascript:;">2</a></li>
+										<li class="next"><a href="javascript:;">下一页</a></li>
+										<li class="end"><a href="javascript:;">末页</a></li>
+									</ul>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					<div class="gmzx_con rgt_pan_con" style="display:none;">
+						<br />
+						<div class="wxts">
+							<span class="icon fl"></span>
+							<div class="tip_del fl">
+								<span class="tit_pic"><img src="images/spxq_pic_17.gif"/></span>
+								<p>因厂家更改商品包装、场地、附配件等不做提前通知，且每位咨询者购买、提问时间等不同。为此，客服给到的回复仅对提问者3天内有效，其他网友仅供参考！给您带来的不变还请谅解，谢谢！</p>
+							</div>
+							<a href="javascript:;" class="wytw fr">我要提问</a>
+						</div>
+						<div class="zx_del">
+							<div class="zx_tab">
+								<ul>
+									<li class="current"><a href="javascript:;">全部</a></li>
+									<li><a href="javascript:;">商品咨询</a></li>
+									<li><a href="javascript:;">支付问题</a></li>
+									<li><a href="javascript:;">发票及保修</a></li>
+									<li><a href="javascript:;">促销及赠品</a></li>
+								</ul>
+							</div>
+							<div class="zx_list current">
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<a href="javascript:;" class="ckgd">查看更多</a>
+							</div>
+							<div class="zx_list">
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>1你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<a href="javascript:;" class="ckgd">查看更多</a>
+							</div>	
+							<div class="zx_list">
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<a href="javascript:;" class="ckgd">查看更多</a>
+							</div>	
+							<div class="zx_list">
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<a href="javascript:;" class="ckgd">查看更多</a>
+							</div>	
+							<div class="zx_list">
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<div class="list_div">
+									<div class="user fl">
+										<div class="pic"><img src="images/spxq_pic_16.gif"/></div>
+										<p>s***3</p>
+									</div>
+									<div class="rt fl">
+										<div class="q ">
+											<p class="q_del"><span>问</span>你们都是买哪个型号的椅子多？</p>
+											<p class="time">2016-09-12 21:25:54</p>
+										</div>
+										<div class="a_list">
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+											<div class="a">
+												<div class="div_l fl">
+													<p class="a_del"><span>答</span>自己配的椅子</p>
+													<p class="time"><span class="span_01">已买的人</span>丁***y<span class="span_02">2016-09-12 21:25:54</span></p>
+												</div>
+												<div class="div_r">
+													赞<span>(1)</span>
+												</div>												
+											</div>
+										</div>
+										<p class="more">共5个回答<a href="javascript:;">查看更多</a></p>
+									</div>
+								</div>
+								<a href="javascript:;" class="ckgd">查看更多</a>
+							</div>	
+						</div>
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+				</div>
+			</div>			
+		</div>
+	</div>
+	<!--/main end-->	
+	<!--footer  start-->
+	<div class="footer w100">
+		<div class="footer_in in_width f14">
+			<div class="footer_top">
+				<ul class="fl">
+					<li>
+						<span>优</span>品质保障
+					</li>
+					<li>
+						<span>七</span>七天无理由退换货
+					</li>
+					<li>
+						<span>特</span>特色服务体验
+					</li>
+					<li>
+						<span>帮</span>帮助中心
+					</li>
+				</ul>
+				<p class="kfdh fr">客服电话：0539-2872999 08:00-17:30(周一至周日)</p>
+			</div>
+			<div class="site_info">
+				<div class="info_list fl">
+					<ul>
+						<li><a href="javascript:;">新手指南</a></li>
+						<li><a href="javascript:;">如何注册成为会员</a></li>
+						<li><a href="javascript:;">忘记密码</a></li>
+						<li><a href="javascript:;">个人资料修改</a></li>
+						<li><a href="javascript:;">账户安全</a></li>
+					</ul>
+				</div>
+				<div class="info_list fl">
+					<ul>
+						<li><a href="javascript:;">购物指南</a></li>
+						<li><a href="javascript:;">购物流程</a></li>
+						<li><a href="javascript:;">收货地址管理</a></li>
+						<li><a href="javascript:;">订单管理</a></li>
+						<li><a href="javascript:;">宝贝/店铺收藏</a></li>
+					</ul>
+				</div>
+				<div class="info_list fl">
+					<ul>
+						<li><a href="javascript:;">常见问题</a></li>
+						<li><a href="javascript:;">售后申请与交易投诉</a></li>
+						<li><a href="javascript:;">退款/退货</a></li>
+					</ul>
+				</div>
+				<div class="info_list fl">
+					<ul>
+						<li><a href="javascript:;">会员与联盟商家</a></li>
+						<li><a href="javascript:;">会员计划及会员权益</a></li>
+						<li><a href="javascript:;">联盟商家、企业进驻</a></li>
+					</ul>
+				</div>
+				<div class="info_list fl">
+					<ul>
+						<li><a href="javascript:;">关于我们</a></li>
+						<li><a href="javascript:;">商业大系统</a></li>
+						<li><a href="javascript:;">运营机制</a></li>
+						<li><a href="javascript:;">联系我们</a></li>
+					</ul>
+				</div>
+				<div class="rz fr">
+					<div class="icon"><img src="images/footer_pic_01.gif"/></div>
+					<p>商家合作</p>
+					<p>错过天猫？别再错过我们！</p>
+					<p>开启消费商新纪元！</p>
+					<a href="javascript:;" class="msrz f18">马上入驻</a>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<!--/footer  end-->
+	<!--copy  start-->
+	<div class="copy w100">
+		<div class="copy_in in_width">
+			<div class="pic_01 fl"><img src="images/copy_pic_01.png"/></div>
+			<div class="pic_02 fl"><img src="images/copy_pic_02.png"/></div>
+			<div class="info fl f12">
+				<p class="list">
+					<a href="javascript:;">返回首页</a>|
+					<a href="javascript:;">招聘英才</a>|
+					<a href="javascript:;">合作及洽谈</a>|
+					<a href="javascript:;">联系我们</a>|
+					<a href="javascript:;">关于我们</a>|
+					<a href="javascript:;">友情链接</a>
+				</p>
+				<p class="p_01">CopyRight © 2007-2016  网店运维交流中心 鲁ICP备16018100号-1 NewPower Co.版权所有  客户服务中心(7x24):QQ8988354 Q群：111731672</p>
+				<div class="pic_03"><img src="images/copy_pic_03.png"/></div>
+			</div>
+		</div>
+	</div>
+	<!--/copy  end-->
+	<!--侧边固定栏  start-->
+	<div class="nc_appbar">
+		<div class="con">		
+			<div class="kf">
+				<a href="javascript:;">
+					<span class="icon"></span>
+					<span class="tit f12">我的客服</span>
+				</a>
+			</div>
+			<div class="gwc">
+				<a href="javascript:;">
+					<span class="icon"></span>
+					<p class="tit f12">购</p>
+					<p class="tit f12">物</p>
+					<p class="tit f12">车</p>
+				</a>
+			</div>
+			<div class="spdb">
+				<a href="javascript:;">
+					<span class="icon"></span>
+					<span class="tit f12">商品比对</span>
+				</a>
+			</div>
+			<div class="dl">
+				<a href="javascript:;">
+					<span class="icon_01"></span>
+					<div class="login_div">
+						<i class="arrow"></i>
+						<form id="login_form">
+							<div class="list">
+								<div class="icon icon_02 fl"><div></div></div>
+								<input type="text" class="ipt_01 fl"/>
+							</div>
+							<div class="list">
+								<div class="icon icon_03 fl"><div></div></div>
+								<input type="text" class="ipt_01 fl"/>
+							</div>
+							<div class="last">
+								<div class="list fl">
+									<div class="icon icon_04 fl"><div></div></div>
+									<input type="text" class="ipt_02 fl"/>
+								</div>
+								<div class="yzm fl"><img src="images/yzm_pic.jpg"/></div>
+							</div>
+							
+							<input type="submit" class="submit f12" value="确认登录">
+						</form>
+					</div>
+				</a>
+			</div>
+			<div class="to_top">
+				<a href="javascript:;">
+					<span class="icon"></span>
+					<p class="tit f12">TOP</p>
+				</a>
+			</div>
+		</div>
+	</div>		
+	<!--侧边固定栏  end-->
+	<script type="text/javascript">
+		$(function(){
+			//展开更多信息
+			$('.spxq_main .spxq_main_in .top_div .lft_pic .b_div .compare i').click(function(){
+				if($(this).hasClass('sel')){
+					$(this).removeClass('sel');					
+				}else{
+					$(this).addClass('sel');		
+				}
+			});
+			//规格
+			$('.spxq_main .spxq_main_in .top_div .pro_info .guige .sel_ul li').click(function(){
+				$(this).addClass('current').siblings().removeClass('current');
+			});
+			//材质
+			$('.spxq_main .spxq_main_in .top_div .pro_info .caizhi .sel_ul li').click(function(){
+				$(this).addClass('current').siblings().removeClass('current');
+			});
+			//加减
+			$('.spxq_main .spxq_main_in .top_div .pro_info .num_input .ipt_l #num_ipt').val(1);
+			$('.spxq_main .spxq_main_in .top_div .pro_info .num_input .ipt_l .btn .jian').click(function(){	
+				var cur_num = $(this).parent('.btn').siblings('#num_ipt').val();
+				if(cur_num <= 0){
+					$(this).parent('.btn').siblings('#num_ipt').val(0);
+				}else{
+					cur_num--;
+					$(this).parent('.btn').siblings('#num_ipt').val(cur_num);
+				}	
+			})
+			$('.spxq_main .spxq_main_in .top_div .pro_info .num_input .ipt_l .btn .jia').click(function(){
+				var cur_num = $(this).parent('.btn').siblings('#num_ipt').val();
+				if(cur_num >= 99){
+					$(this).parent('.btn').siblings('#num_ipt').val(99);
+				}else{
+					cur_num++;
+					$(this).parent('.btn').siblings('#num_ipt').val(cur_num);
+				}
+			})
+			//商品分类 
+			$('.spxq_main .spxq_main_in .details .lft_pan .spfl .tab_ul li').click(function(e) {
+				$(this).addClass('current').siblings().removeClass('current');
+				var this_index = $(this).index();
+				$(this).closest('.tab_ul').siblings('.tab_div').find('.list_div').eq(this_index).addClass('current');
+				$(this).closest('.tab_ul').siblings('.tab_div').find('.list_div').eq(this_index).siblings('.list_div').removeClass('current');
+			});
+			//商品排行 
+			$('.spxq_main .spxq_main_in .details .lft_pan .spph .tab_ul li').click(function(e) {
+				$(this).addClass('current').siblings().removeClass('current');
+				var this_index = $(this).index();
+				$(this).closest('.tab_ul').siblings('.tab_div').find('.list_div').eq(this_index).addClass('current');
+				$(this).closest('.tab_ul').siblings('.tab_div').find('.list_div').eq(this_index).siblings('.list_div').removeClass('current');
+			});
+			
+			//右侧tab1
+			$('.spxq_main .spxq_main_in .details .rgt_pan .rgt_pan_con').eq(0).show()
+			$('.spxq_main .spxq_main_in .details .rgt_pan .tit ul li').click(function(e) {
+				$(this).addClass('current').siblings().removeClass('current');
+				var index = $(this).index();
+				$('.spxq_main .spxq_main_in .details .rgt_pan .rgt_pan_con').eq(index).show().siblings('.spxq_main .spxq_main_in .details .rgt_pan .rgt_pan_con').hide();
+			});
+			//sel_div
+			$('.spxq_main .spxq_main_in .details .rgt_pan .rgt_pan_con.sppj_con .spms .div_r .sel_div').click(function(){
+				if($(this).hasClass('cl')){
+					$(this).removeClass('cl');					
+				}else{
+					$(this).addClass('cl');		
+				}
+			});
+			//tit_sel .ul_l li
+			$('.spxq_main .spxq_main_in .details .rgt_pan .rgt_pan_con.sppj_con .pj_list .tit_sel .ul_l li input').click(function(){				
+				if($(this).attr('checked') == 'checked'){
+					$(this).attr('checked','checked');
+					$(this).parent('li').siblings('li').children('input').removeAttr("checked");
+				}else{
+					
+					$(this).removeAttr("checked");
+					$(this).parent('li').siblings('li').children('input').removeAttr("checked");
+				}
+			});
+			//
+			$('.spxq_main .spxq_main_in .details .rgt_pan .rgt_pan_con.sppj_con .pj_list .tit_sel .div_r .xl').click(function(){
+				if($(this).hasClass('sel')){
+					$(this).removeClass('sel');					
+				}else{
+					$(this).addClass('sel');		
+				}
+			});
+			//page
+			$('.spxq_main .spxq_main_in .details .rgt_pan .rgt_pan_con.sppj_con .pj_list .list_del .page_div .con .page_ul li').click(function(){
+				$(this).addClass('current').siblings().removeClass('current');
+			});
+			
+			//page2
+			$('.spxq_main .spxq_main_in .details .rgt_pan .rgt_pan_con.xsjl_con .zx_list .xx_list .page_div_03 ul li').click(function(e) {
+				$(this).addClass('current').siblings().removeClass('current');			
+			});
+			
+			//商品分类 
+			$('.spxq_main .spxq_main_in .details .rgt_pan .rgt_pan_con.gmzx_con .zx_del .zx_tab ul li').click(function(e) {
+				$(this).addClass('current').siblings().removeClass('current');
+				var this_index = $(this).index();
+				$(this).closest('.zx_tab').siblings('.zx_list').eq(this_index).addClass('current');
+				$(this).closest('.zx_tab').siblings('.zx_list').eq(this_index).siblings('.zx_list').removeClass('current');
+			});
+			
+			
+			
+			//左右滚动
+			//向前按钮点击
+			$(".spec-scroll .spec-forward").click(function(){
+				if($(this).hasClass("disable")){
+					return false;
+				}
+				var reg = /\d+/;
+				var marleft = parseInt($(".spec-scroll .items ul").css("margin-left").match(reg)[0]);
+				var nums = $(".spec-scroll .items ul li").length;
+				if(nums <= 4){
+					$(".spec-scroll .spec-backward").addClass("disable");
+					$(this).addClass("disable");
+					return false;
+				}
+				var totallen = nums * (72);
+				var setLeft = 0;
+				
+				if((marleft - 288) <= 0){
+					setLeft = 0;
+					$(this).addClass("disable");
+				}else{
+					setLeft = -(marleft - 288);
+				}
+				$(".spec-scroll .spec-backward").removeClass("disable");
+				$(".spec-scroll .items ul").animate({
+					"margin-left":setLeft + "px"
+				});
+			});
+			//向后按钮点击
+			$(".spec-scroll .spec-backward").click(function(){
+				if($(this).hasClass("disable")){
+					return false;
+				}
+				var reg = /\d+/;
+				var marleft = parseInt($(".spec-scroll .items ul").css("margin-left").match(reg)[0]);
+				var nums = $(".spec-scroll .items ul li").length;
+				
+				if(nums <= 4){
+					$(".spec-scroll .spec-forward").addClass("disable");
+					$(this).addClass("disable");
+					return false;
+				}
+				
+				var totallen = nums * (72);
+				var setLeft = 0;
+				
+				if((marleft + 576) >= totallen){
+					setLeft = -(totallen - 288);
+					$(this).addClass("disable");
+				}else{
+					setLeft = -marleft - 288;
+				}
+				$(".spec-scroll .spec-forward").removeClass("disable");
+				$(".spec-scroll .items ul").animate({
+					"margin-left":setLeft + "px"
+				},1000);
+			});
+		})
+	</script>
+</body>
+</html>
