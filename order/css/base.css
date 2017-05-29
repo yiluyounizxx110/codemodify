@@ -288,7 +288,7 @@ table{border-spacing: 0px;}
 .footer_in .footer_site_info .footer_site_info_ul{float:left;display: inline-block;list-style: none;width:160px;margin-left: 40px;margin-top: 28px;height:210px;}
 .footer_in .footer_site_info .footer_site_info_ul li{height:37px;line-height: 37px;color:#333333;}
 .footer_in .footer_site_info .footer_site_info_ul li a{display:block;height:37px;line-height: 37px;color:#333333;font-size: 14px;}
-.footer_in .footer_site_info .footer_site_info_ul li:first-child a{font-size: 18px;}
+.footer_in .footer_site_info .footer_site_info_ul li:first-child a{font-size: 18px;font-weight: bold;}
 .footer_in .footer_site_info .qr_code{float:right;width:159px;238px;}
 .footer_in .footer_site_info .qr_code img{width:159px;height:159px;margin-top: 38px;}
 .footer_in .footer_site_info .qr_code div{height:34px;line-height: 34px;font-size: 14px;}
