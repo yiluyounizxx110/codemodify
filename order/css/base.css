@@ -271,7 +271,7 @@ table{border-spacing: 0px;}
 .footer_in .footer_title{padding:40px 0 20px 0; border-bottom:1px solid #eeeeee;overflow:hidden;}
 .footer_in .footer_title ul{height:60px;list-style: none;}
 .footer_in .footer_title ul li{float:left;display:inline-block;height:60px;}
-.footer_in .footer_title ul li .left_icon{display: inline-block;width:56px;height:56px;border:2px solid #BC0206;border-radius: 50%;color:#DF241C;font-size: 31px;text-align: center;line-height: 54px;float:left;}
+.footer_in .footer_title ul li .left_icon{display: inline-block;width:54px;height:54px;border:3px solid #BC0206;border-radius: 50%;color:#DF241C;font-size: 30px;text-align: center;line-height: 52px;float:left;}
 .footer_in .footer_title ul li .right_div{display:inline-block;margin-left: 18px;height: 60px;float:left;}
 .footer_in .footer_title ul li .right_div .right_div_t_cn{height:30px;line-height: 40px;font-weight: bold;font-size: 22px;color:#333333;}
 .footer_in .footer_title ul li .right_div .right_div_t_en{height:28px;line-height: 28px;font-weight: bold;font-size: 14px;color:#797979;}
